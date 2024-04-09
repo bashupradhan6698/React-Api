@@ -1,14 +1,34 @@
-import Header from "./components/Layout/Header";
-import Layout from "./components/Layout";
+import axios from "axios";
+import { useState } from "react";
+
+/* 
+crud operators in database
+create, update, delete, read 
+
+request methods
+get, post, put, patch, delete
+*/
 
 function UsersApi() {
-  let users = [];
+  // let users = [];
+  const [users, setUsers] = useState([]);
+
   function fetchUsersData() {
+    axios.get("https://dummyjson.com/users").then((res) => {
+      // users = res.data.users;
+      console.log({ users });
+      setUsers(res.data.users);
+    });
+
+    // console.log("fetching......");
+    // fetch("https://dummyjson.com/users") //asynchronous functionor promise (fetch) // runs in background so .then is used
+    // .then((res) => res.json())
+    // console.log(res.json());
+    // .then((data) => console.log(data));
     console.log("fetching......");
-    fetch("https://dummyjson.com/users") //asynchronous function fetch // runs in background
-      .then((res) => res.json())
-      .then((json) => console.log(json));
   }
+
+  console.log("render");
   return (
     <>
       <div>users</div>
@@ -24,7 +44,7 @@ function UsersApi() {
       >
         {users.map((user) => {
           return (
-            <li>
+            <li key={user.id}>
               <div>
                 <img src={user.image} alt="" />
                 <p
