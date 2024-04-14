@@ -13,10 +13,12 @@ function UsersApi() {
   // let users = [];
   const [users, setUsers] = useState([]);
 
+  /* use effect */
+
   function fetchUsersData() {
     axios.get("https://dummyjson.com/users").then((res) => {
       // users = res.data.users;
-      console.log({ users });
+      // console.log({ users });
       setUsers(res.data.users);
     });
 

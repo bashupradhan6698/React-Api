@@ -25,6 +25,9 @@ function Header() {
           <li>
             <Link to="/users-api">Users from API</Link>
           </li>
+          <li>
+            <Link to="/products">Products</Link>
+          </li>
         </ul>
       </nav>
       <hr />

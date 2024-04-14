@@ -4,7 +4,6 @@ import Footer from "./Footer";
 function Index(props) {
   return (
     <>
-      {/* {props.title} */}
       <Header />
       {props.children}
       <Footer />
