@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Product from "../components/Product";
 
 // let products = ["iphone", "samsung"];
 
-function Products() {
+function Products(props) {
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
   // const [products, setProducts] = useState([]);
@@ -30,6 +31,11 @@ componentdDidUpdate
 
   console.log("components re-render");
 
+  function addtoCart() {
+    console.log("add to header");
+    props.setcartCount(props.cartCount + 1);
+  }
+
   return (
     <>
       <button
@@ -41,19 +47,18 @@ componentdDidUpdate
       </button>
       <button onClick={fetchProducts}>Fetch Products</button>
       <h1>Products list</h1>
-      <h1>Count = {count}</h1>
-      <ul
-        style={{
-          listStyle: "none",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "1rem",
-        }}
-      >
+      {/* <h1>Cart Count = {cartCount}</h1> */}
+      <ul>
         {products.map((product) => {
           return (
             <>
-              <li key={product.id}>{product.title}</li>
+              <li key={product.id} style={{ marginBottom: "5px" }}>
+                <Product
+                  cartCount={props.cartCount}
+                  setcartCount={props.setcartCount}
+                  product={product}
+                />
+              </li>
             </>
           );
         })}

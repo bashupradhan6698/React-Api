@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header(props) {
   return (
     <>
       <nav
@@ -27,6 +27,9 @@ function Header() {
           </li>
           <li>
             <Link to="/products">Products</Link>
+          </li>
+          <li>
+            <Link to="/carts">Carts({props.cartCount})</Link>
           </li>
         </ul>
       </nav>

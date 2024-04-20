@@ -1,5 +1,5 @@
-import Header from "./components/Layout/Header";
-import Layout from "./components/Layout";
+import Header from "../components/Layout/Header";
+import Layout from "../components/Layout";
 
 function Users() {
   let users = [

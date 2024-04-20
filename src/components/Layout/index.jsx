@@ -4,7 +4,7 @@ import Footer from "./Footer";
 function Index(props) {
   return (
     <>
-      <Header />
+      <Header cartCount={props.cartCount} />
       {props.children}
       <Footer />
     </>
