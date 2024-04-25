@@ -31,10 +31,10 @@ componentdDidUpdate
 
   console.log("components re-render");
 
-  function addtoCart() {
-    console.log("add to header");
-    props.setcartCount(props.cartCount + 1);
-  }
+  // function addtoCart() {
+  //   console.log("add to header");
+  //   props.setcartCount(props.cartCount + 1);
+  // }
 
   return (
     <>
